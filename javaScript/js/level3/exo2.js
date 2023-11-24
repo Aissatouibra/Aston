@@ -52,9 +52,9 @@ function compareNumbers(number1, number2){
  */
 function comparePrices(price1, price2){
     if (compareNumbers(price1,price2) == 0){
-        console.log("Bravo vous avez trouvez le bon prix !")
+        console.log("Bravo vous avez trouvez le bon prix !");
     }
-    else if(compareNumbers(price1,price2) ==1 ){
+    else if(compareNumbers(price1,price2) == 1 ){
         console.log("Moins");
     }
     else{
@@ -75,11 +75,12 @@ function comparePrices(price1, price2){
 function theJustPrice(){
     let numberOfLife = chooseANumber();
     let thePrice= getRandomInt(numberOfLife);
+    let price =numberOfLife;
     comparePrices(numberOfLife,thePrice);
     numberOfLife--;;
-    while (numberOfLife >0){
-        let price = (chooseANumber());
-        compareNumbers(price,thePrice);
+    while ( price !== thePrice && numberOfLife > 0  ){
+        price = (chooseANumber());
+        comparePrices(price,thePrice);
         numberOfLife--;
     }
 }
